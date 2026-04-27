@@ -1,5 +1,5 @@
 {
-  description = "System and Home Manager Flake";
+  description = "Flake including system configs for laptop and mini PC";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
