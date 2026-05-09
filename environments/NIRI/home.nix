@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
 
 
   home.username = "rm";
@@ -19,27 +19,14 @@
   programs.niri = {
     enable = true;
     settings = {
-      env = [
-        "GTK_THEME,Adwaita:dark"
-        "QT_STYLE_OVERRIDE,Adwaita-dark"
-        "COLOR_SCHEME,prefer-dark"
-        "GTK_APPLICATION_PREFER_DARK_THEME,1"
-      ];
 
-      exec-once = [
-        "waybar"
-      ];
-
-      input = {
-        natural_scroll = true;
+      binds = with config.lib.niri.actions; {
+        "Mod+Return".action = spawn "foot";
+        "Mod+C".action = quit;
+        "Mod+F".action = spawn "firefox";
       };
-
-      binds = [
-        "SUPER, F, exec, firefox"
-        "SUPER, RETURN, exec, foot"
-      ];
     };
   };
 
-  home.stateVersion = "25.11";
+  home.stateVersion = "25.11";  
 }

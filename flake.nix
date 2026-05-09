@@ -11,6 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, plasma-manager,  ... }@inputs: {
@@ -55,7 +58,13 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-          home-manager.users.rm = import ./environments/NIRI/home.nix;
+          home-manager.users.rm = { 
+            imports = [ 
+              ./environments/NIRI/home.nix 
+              inputs.niri.homeModules.niri  
+            ];
+            programs.niri.enable = true;
+          };
         }
       ];
     };
