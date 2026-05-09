@@ -30,7 +30,7 @@
       ];
     };
 
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.laptop_HYPR = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
@@ -41,6 +41,21 @@
           home-manager.useUserPackages = true;
 
           home-manager.users.rm = import ./environments/HYPR/home.nix;
+        }
+      ];
+    };
+
+    nixosConfigurations.laptop_NIRI = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./environments/NIRI/configuration.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.users.rm = import ./environments/NIRI/home.nix;
         }
       ];
     };
