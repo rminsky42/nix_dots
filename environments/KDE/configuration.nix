@@ -84,6 +84,15 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  #Enable RDP server
+  services.xrdp.enable = true;
+
+  #Open RDP Port
+  services.xrdp.openFirewall = true;
+
+  #Use X11 for rdp
+  services.xrdp.defaultWindowManager = "startplasma-x11";
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
