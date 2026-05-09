@@ -98,6 +98,10 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  virtualisation.docker.enable = true;
   
   programs.niri.enable = true;
+
+  programs.niri.package = pkgs.niri-unstable;
 }
