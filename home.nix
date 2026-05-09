@@ -11,7 +11,12 @@
     pkgs.git 
     pkgs.firefox
     pkgs.foot
+    pkgs.vscode
   ];
+
+  programs.vscode = {
+    enable = true;
+  };
 
   programs.foot.enable = true;
 
