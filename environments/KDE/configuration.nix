@@ -69,6 +69,7 @@
     wget
     hello
     uv
+    fastfetch
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -78,6 +79,27 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  # Enable Zsh
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    interactiveShellInit = ''
+      fastfetch
+    '';
+
+    # Enable and configure Oh My Zsh
+    ohMyZsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [ "git" "sudo" ];
+    };
+  };
+
+  # Set zsh as default shell for users
+  users.defaultUserShell = pkgs.zsh;
 
   # List services that you want to enable:
 
