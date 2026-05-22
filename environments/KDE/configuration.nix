@@ -70,6 +70,7 @@
     hello
     uv
     fastfetch
+    moonlight-qt
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -143,5 +144,10 @@
   services.libinput.touchpad.naturalScrolling = true;
   
   services.xserver.enable = true;
+
+  #STEAM
+  programs.steam = {
+    enable = true;
+  };
   
 }
