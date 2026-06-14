@@ -110,6 +110,29 @@
         "type": "github"
       }
     },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "noctalia-qs": [
+          "quickshell"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778694748,
+        "narHash": "sha256-rnz+rUI1a+oJ+XiSohOCJwUkydiadlFyl1J+kHubxuc=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "56084c6a08d19cf456fcb8888948cd2a99c68ef1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "type": "github"
+      }
+    },
     "plasma-manager": {
       "inputs": {
         "home-manager": [
@@ -133,12 +156,34 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778488696,
+        "narHash": "sha256-QSWgYuZUCNUJ/cxmaq83WkcT7lHQDDfsPVgH+96kIl0=",
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "rev": "7d1c9a9c6721606b129829134d6f614f015621e2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "outfoxxed",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
-        "plasma-manager": "plasma-manager"
+        "noctalia": "noctalia",
+        "plasma-manager": "plasma-manager",
+        "quickshell": "quickshell"
       }
     },
     "xwayland-satellite-stable": {

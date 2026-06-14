@@ -14,6 +14,16 @@
 
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
+
+    quickshell = {
+      url = "github:outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "quickshell";  # Use same quickshell version
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, plasma-manager,  ... }@inputs: {
@@ -57,13 +67,14 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };  # <-- add this
 
           home-manager.users.rm = { 
             imports = [ 
               ./environments/NIRI/home.nix 
               inputs.niri.homeModules.niri  
+              inputs.noctalia.homeModules.default
             ];
-            programs.niri.enable = true;
           };
         }
       ];
