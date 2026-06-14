@@ -75,6 +75,27 @@
     power-profiles-daemon
   ];
 
+  # Enable Zsh
+  programs.zsh = {
+    enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+
+    interactiveShellInit = ''
+      fastfetch
+    '';
+
+    # Enable and configure Oh My Zsh
+    ohMyZsh = {
+      enable = true;
+      theme = "agnoster";
+      plugins = [ "git" "sudo" ];
+    };
+  };
+
+  # Set zsh as default shell for users
+  users.defaultUserShell = pkgs.zsh;
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
