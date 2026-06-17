@@ -30,9 +30,6 @@
 
 
     settings = {
-      spawn-at-startup = [
-        { sh = "qs -c noctalia"; }
-      ];
 
       binds = with config.lib.niri.actions; {
         "Mod+Return".action = spawn "foot";
@@ -83,16 +80,9 @@
     };
   };
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    settings = {
-      # Add your noctalia-shell settings here
-    };
-  };
-
-  xdg.configFile = {
-    "quickshell/noctalia-shell".source = "${config.programs.noctalia-shell.package}/share/noctalia-shell";
-    "quickshell/noctalia".source = "${config.programs.noctalia-shell.package}/share/noctalia-shell";
+    systemd.enable = true;
   };
 
   home.stateVersion = "25.11";  

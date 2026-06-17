@@ -73,6 +73,13 @@
     noctalia-qs
     brightnessctl
     power-profiles-daemon
+    fastfetch
+  ];
+
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    noto-fonts
+    noto-fonts-color-emoji
   ];
 
   # Enable Zsh
