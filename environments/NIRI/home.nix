@@ -32,6 +32,8 @@
     settings = {
 
       binds = with config.lib.niri.actions; {
+        "Mod+Space".action.spawn = ["noctalia" "msg" "panel-toggle" "launcher"];
+
         "Mod+Return".action = spawn "foot";
         "Mod+C".action = close-window;
         "Mod+F".action = spawn "firefox";
