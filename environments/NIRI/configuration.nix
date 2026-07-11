@@ -82,6 +82,18 @@
     noto-fonts-color-emoji
   ];
 
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    autoLogin = {
+      enable = true;    
+      user = "rm"; # Replace with the desired user
+    };
+  };
+
+
   # Enable Zsh
   programs.zsh = {
     enable = true;
