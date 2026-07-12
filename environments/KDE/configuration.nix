@@ -27,6 +27,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  #Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; 
+
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
 
@@ -71,6 +75,7 @@
     uv
     fastfetch
     moonlight-qt
+    easyeffects
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
