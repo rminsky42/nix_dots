@@ -16,6 +16,8 @@
 
   programs.foot.enable = true;  
 
+  home.file.".config/foot/foot.ini".source = "${pkgs.foot}/share/foot/themes/tokyonight-night.ini";
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
