@@ -16,7 +16,31 @@
 
   programs.foot.enable = true;  
 
-  home.file.".config/foot/foot.ini".source = "${pkgs.foot}/share/foot/themes/tokyonight-night.ini";
+  programs.foot.settings = {
+    # Keep colors inline so foot does not depend on a package-internal theme path.
+    colors-dark = {
+      foreground = "c0caf5";
+      background = "1a1b26";
+      regular0 = "15161e";
+      regular1 = "f7768e";
+      regular2 = "9ece6a";
+      regular3 = "e0af68";
+      regular4 = "7aa2f7";
+      regular5 = "bb9af7";
+      regular6 = "7dcfff";
+      regular7 = "a9b1d6";
+      bright0 = "414868";
+      bright1 = "f7768e";
+      bright2 = "9ece6a";
+      bright3 = "e0af68";
+      bright4 = "7aa2f7";
+      bright5 = "bb9af7";
+      bright6 = "7dcfff";
+      bright7 = "c0caf5";
+    };
+
+    csd.preferred = "none";
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
