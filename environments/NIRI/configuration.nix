@@ -51,6 +51,16 @@
     variant = "";
   };
 
+  services.libinput = {
+    enable = true;
+    touchpad = {
+      naturalScrolling = true;
+      accelProfile = "flat";
+      accelSpeed = 0.8;
+      tapping = true;
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.rm = {
     isNormalUser = true;
