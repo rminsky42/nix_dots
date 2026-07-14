@@ -91,6 +91,9 @@
         # Switch preset window width
         "Mod+E".action = switch-preset-window-width;
 
+        # Toggle windowed fullscreen
+        "Mod+Shift+T".action = toggle-windowed-fullscreen;
+
       };
     };
   };
