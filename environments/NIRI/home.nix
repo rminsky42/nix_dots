@@ -78,6 +78,19 @@
         # Toggle mute
         "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
         "XF86AudioMute".allow-when-locked = true;
+
+        # Toggle Floating for the focused window
+        "Mod+Y".action = toggle-window-floating;
+
+        # Toggle Fullscreen for the focused window
+        "Mod+T".action = fullscreen-window;
+
+        # Toggle the focused window to full column
+        "Mod+R".action = maximize-column;
+
+        # Switch preset window width
+        "Mod+E".action = switch-preset-window-width;
+
       };
     };
   };
