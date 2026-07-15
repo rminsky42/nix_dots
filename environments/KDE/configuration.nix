@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../hardware-configuration.nix
+      ../../modules/zsh.nix
     ];
 
   # Bootloader.
@@ -84,24 +85,6 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-  };
-
-  # Enable Zsh
-  programs.zsh = {
-    enable = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-
-    interactiveShellInit = ''
-      fastfetch
-    '';
-
-    # Enable and configure Oh My Zsh
-    ohMyZsh = {
-      enable = true;
-      theme = "agnoster";
-      plugins = [ "git" "sudo" ];
-    };
   };
 
   # Set zsh as default shell for users

@@ -1,5 +1,8 @@
 { pkgs, ... }: {
 
+  imports = [
+    ../../modules/foot.nix
+  ];
 
   home.username = "rm";
   home.homeDirectory = "/home/rm";
@@ -17,8 +20,6 @@
   programs.vscode = {
     enable = true;
   };
-
-  programs.foot.enable = true;
 
   programs.plasma = {
     enable = true;
